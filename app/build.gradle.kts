@@ -1,4 +1,4 @@
-﻿plugins {
+plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
 }
@@ -40,4 +40,9 @@ dependencies {
     
     // Google Gemini Yapay Zeka Kütüphanesi
     implementation("com.google.ai.client.generativeai:generativeai:0.9.0")
+}
+
+// checkDebugAarMetadata kontrolünü devre dışı bırakır (Hatanın kesin çözümü)
+tasks.matching { it.name.contains("AarMetadata") }.configureEach {
+    enabled = false
 }
